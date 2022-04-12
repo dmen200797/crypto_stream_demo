@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="249" height="118" viewBox="0 0 249 118">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#b29bff"/>
+      <stop offset="1" stop-color="#5927ff"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.067" y1="0.05" x2="0.833" y2="1.105" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#4624ff"/>
+      <stop offset="1" stop-color="#cabaff"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_150" data-name="Group 150" transform="translate(111 -87)">
+    <rect id="Rectangle_692" data-name="Rectangle 692" width="249" height="118" rx="59" transform="translate(-111 87)" fill="#fff"/>
+    <g id="Group_118" data-name="Group 118" transform="translate(-134.066 -70)">
+      <path id="Union_2" data-name="Union 2" d="M0,48.488V10.39A10.39,10.39,0,0,1,10.39,0H24.244A24.215,24.215,0,0,1,44.008,10.2H61.583l-13.127,12.8q.032.621.032,1.25A24.244,24.244,0,0,1,24.244,48.488Z" transform="translate(170 179.563)" fill="url(#linear-gradient)"/>
+      <path id="Path_222" data-name="Path 222" d="M19.671,0h16.72A20.654,20.654,0,0,1,57.045,20.654v7.868A28.523,28.523,0,0,1,0,28.523V19.671A19.671,19.671,0,0,1,19.671,0Z" transform="translate(170 258) rotate(-90)" fill="url(#linear-gradient-2)"/>
+      <path id="Path_221" data-name="Path 221" d="M16.953,0h14.41a17.8,17.8,0,0,1,17.8,17.8v6.781A24.582,24.582,0,0,1,0,24.582V16.953A16.953,16.953,0,0,1,16.953,0Z" transform="translate(170 258) rotate(-90)" fill="url(#linear-gradient-2)"/>
+      <path id="Path_220" data-name="Path 220" d="M13.938,0H25.785A14.634,14.634,0,0,1,40.419,14.634v5.575A20.21,20.21,0,0,1,0,20.209V13.938A13.938,13.938,0,0,1,13.938,0Z" transform="translate(170 258) rotate(-90)" fill="url(#linear-gradient-2)"/>
+      <path id="Path_211" data-name="Path 211" d="M6611.192,2708.134l14.248-4.982-13,12.519Z" transform="translate(-6393.858 -2513.39)" fill="#e3dbff"/>
+      <circle id="Ellipse_49" data-name="Ellipse 49" cx="2.139" cy="2.139" r="2.139" transform="translate(204.227 193.824)" fill="#fff"/>
+    </g>
+  </g>
+</svg>
