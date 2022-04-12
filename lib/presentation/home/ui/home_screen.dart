@@ -10,8 +10,13 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          Assets.images.homeBgroud.svg(
-            width: 1.sw
+          Stack(
+            children: [
+              Assets.images.homeBgroud.svg(
+                  width: 1.sw
+              ),
+
+            ],
           ),
         ],
       ),
