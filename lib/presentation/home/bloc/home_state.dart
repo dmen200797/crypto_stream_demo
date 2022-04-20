@@ -10,10 +10,10 @@ class HomeInitial extends HomeState {
 }
 
 class GotCoinListState extends HomeState {
-  final CoinEntity coinEntity;
+  final CoinListResponse listCoin;
 
-  const GotCoinListState(this.coinEntity);
+  const GotCoinListState(this.listCoin);
 
   @override
-  List<Object?> get props => [coinEntity];
+  List<Object?> get props => [listCoin];
 }

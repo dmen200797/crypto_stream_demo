@@ -4,19 +4,33 @@ import 'package:crypto_stream_demo/domain/home/repositories/home_repository.dart
 import 'package:crypto_stream_demo/presentation/app_routing.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_it/get_it.dart';
 
 GetIt getIt = GetIt.instance;
-final dio = Dio();
 
-void main() {
+Future<void> main() async {
+  final dio = Dio(
+      BaseOptions(
+        baseUrl: 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/',
+      )
+  );
+  dio.interceptors.add(InterceptorsWrapper(
+    onRequest: (options, handler) {
+      options.headers['X-CMC_PRO_API_KEY'] = '7c6c6e99-8d37-4be6-8672-9c0305d5836a';
+      return handler.next(options);
+    }
+  ));
   getIt.registerSingleton(CoinApi(dio));
   getIt.registerFactory<HomeRepository>(
     () => HomeRepositoryImpl(
       getIt<CoinApi>(),
     ),
   );
+  String? flavor = await const MethodChannel('flavor')
+      .invokeMethod<String>('getFlavor');
+  print('=======FLAVOR $flavor');
   runApp(const MyApp());
 }
 

@@ -1,14 +1,13 @@
-import 'package:crypto_stream_demo/domain/home/entities/coin_entity.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'coin_response.g.dart';
 
-@JsonSerializable(explicitToJson: true)
-class CoinListResponse extends CoinEntity {
+@JsonSerializable(explicitToJson: true, anyMap: true)
+class CoinListResponse {
   CoinListResponse({
-    required this.status,
-    required this.data,
-  }) : super(listCoin: data ?? []);
+     this.status,
+     this.data,
+  });
 
   Status? status;
   List<Data>? data;
@@ -20,30 +19,25 @@ class CoinListResponse extends CoinEntity {
 }
 
 @JsonSerializable(explicitToJson: true)
-class Data extends DataEntity {
+class Data {
   Data({
-    required this.id,
-    required this.name,
-    required this.symbol,
-    required this.slug,
-    required this.numMarketPairs,
-    required this.dateAdded,
-    required this.tags,
-    required this.maxSupply,
-    required this.circulatingSupply,
-    required this.totalSupply,
-    required this.platform,
-    required this.cmcRank,
-    required this.selfReportedCirculatingSupply,
-    required this.selfReportedMarketCap,
-    required this.lastUpdated,
-    required this.quote,
-  }) : super(
-          percentChange: quote?.usd?.percentChange1H ?? 0,
-          coinSymbol: symbol ?? '',
-          coinName: name ?? '',
-          price: quote?.usd?.price ?? 0,
-        );
+     this.id,
+     this.name,
+     this.symbol,
+     this.slug,
+     this.numMarketPairs,
+     this.dateAdded,
+     this.tags,
+     this.maxSupply,
+     this.circulatingSupply,
+     this.totalSupply,
+     this.platform,
+     this.cmcRank,
+     this.selfReportedCirculatingSupply,
+     this.selfReportedMarketCap,
+     this.lastUpdated,
+     this.quote,
+  });
 
   int? id;
   String? name;
@@ -64,21 +58,13 @@ class Data extends DataEntity {
 
   factory Data.fromJson(Map<String, dynamic> json) => _$DataFromJson(json);
 
-  @override
   Map<String, dynamic> toJson() => _$DataToJson(this);
-
-// DataEntity toEntity() => DataEntity(
-//       coinName: name ?? '',
-//       price: quote?.usd?.price ?? 0,
-//       percentChange: quote?.usd?.percentChange1H ?? 0,
-//       coinSymbol: symbol ?? '',
-//     );
 }
 
 @JsonSerializable(explicitToJson: true)
 class Quote {
   Quote({
-    required this.usd,
+     this.usd,
   });
 
   @JsonKey(name: 'USD')
@@ -92,19 +78,19 @@ class Quote {
 @JsonSerializable()
 class Usd {
   Usd({
-    required this.price,
-    required this.volume24H,
-    required this.volumeChange24H,
-    required this.percentChange1H,
-    required this.percentChange24H,
-    required this.percentChange7D,
-    required this.percentChange30D,
-    required this.percentChange60D,
-    required this.percentChange90D,
-    required this.marketCap,
-    required this.marketCapDominance,
-    required this.fullyDilutedMarketCap,
-    required this.lastUpdated,
+     this.price,
+     this.volume24H,
+     this.volumeChange24H,
+     this.percentChange1H,
+     this.percentChange24H,
+     this.percentChange7D,
+     this.percentChange30D,
+     this.percentChange60D,
+     this.percentChange90D,
+     this.marketCap,
+     this.marketCapDominance,
+     this.fullyDilutedMarketCap,
+     this.lastUpdated,
   });
 
   double? price;
@@ -131,13 +117,13 @@ class Usd {
 @JsonSerializable()
 class Status {
   Status({
-    required this.timestamp,
-    required this.errorCode,
-    required this.errorMessage,
-    required this.elapsed,
-    required this.creditCount,
-    required this.notice,
-    required this.totalCount,
+     this.timestamp,
+     this.errorCode,
+     this.errorMessage,
+     this.elapsed,
+     this.creditCount,
+     this.notice,
+     this.totalCount,
   });
 
   DateTime? timestamp;

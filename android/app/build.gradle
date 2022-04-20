@@ -57,6 +57,21 @@ android {
             signingConfig signingConfigs.debug
         }
     }
+
+    flavorDimensions "app"
+
+    productFlavors {
+        development {
+            dimension "app"
+            applicationId "at.chwe.cryptostreamdemo.dev"
+            resValue "string", "app_name", "DEV Crypto"
+        }
+        production {
+            dimension "app"
+            applicationId "at.chwe.cryptostreamdemo.pro"
+            resValue "string", "app_name", "Pro Crypto"
+        }
+    }
 }
 
 flutter {

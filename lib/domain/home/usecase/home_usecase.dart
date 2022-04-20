@@ -1,4 +1,4 @@
-import 'package:crypto_stream_demo/domain/home/entities/coin_entity.dart';
+import 'package:crypto_stream_demo/data/home/models/coin_response.dart';
 import 'package:crypto_stream_demo/domain/home/repositories/home_repository.dart';
 
 class HomeUseCase {
@@ -6,5 +6,5 @@ class HomeUseCase {
 
   HomeUseCase(this._repository);
 
-  Future<CoinEntity> getListCoin() => _repository.getCoinList();
+  Future<CoinListResponse> getListCoin() => _repository.getCoinList();
 }

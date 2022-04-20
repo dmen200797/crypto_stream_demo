@@ -9,9 +9,7 @@ part of 'coin_api.dart';
 // ignore_for_file: unnecessary_brace_in_string_interps
 
 class _CoinApi implements CoinApi {
-  _CoinApi(this._dio, {this.baseUrl}) {
-    baseUrl ??= 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/';
-  }
+  _CoinApi(this._dio, {this.baseUrl});
 
   final Dio _dio;
 
@@ -21,10 +19,7 @@ class _CoinApi implements CoinApi {
   Future<CoinListResponse> getCoinList(limit) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'limit': limit};
-    final _headers = <String, dynamic>{
-      r'X-CMC_PRO_API_KEY': '7c6c6e99-8d37-4be6-8672-9c0305d5836a'
-    };
-    _headers.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<CoinListResponse>(

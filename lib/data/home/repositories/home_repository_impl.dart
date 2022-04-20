@@ -9,11 +9,11 @@ class HomeRepositoryImpl implements HomeRepository {
 
   @override
   Future<CoinListResponse> getCoinList() async {
-    // try {
+    try {
       return await coinApi.getCoinList(10);
-    // } catch (e) {
-    //   throw Exception(e);
-    // }
+    } catch (e) {
+      throw Exception(e);
+    }
   }
 
 
