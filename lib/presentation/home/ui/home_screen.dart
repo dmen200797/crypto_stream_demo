@@ -5,8 +5,18 @@ import 'package:crypto_stream_demo/presentation/home/ui/widgets/top_coin_row.dar
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  FixedExtentScrollController fixedExtentScrollController =
+      FixedExtentScrollController();
+
+  List monthsOfTheYear = ['1', '2', '3', '4', '5', '6', '7', '8'];
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +30,29 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     Assets.images.homeBgroud.svg(width: 1.sw),
                     const SizedBox(height: 77.5),
+                    SizedBox(
+                      height: 300,
+                      child: ListWheelScrollView(
+                        controller: fixedExtentScrollController,
+                        physics: const FixedExtentScrollPhysics(),
+                        children: monthsOfTheYear.map((month) {
+                          return Card(
+                              child: Row(
+                            children: <Widget>[
+                              Expanded(
+                                  child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(
+                                  month,
+                                  style: TextStyle(fontSize: 18.0),
+                                ),
+                              )),
+                            ],
+                          ));
+                        }).toList(),
+                        itemExtent: 60.0,
+                      ),
+                    ),
                   ],
                 ),
                 Positioned(

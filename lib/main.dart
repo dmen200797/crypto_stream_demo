@@ -28,9 +28,9 @@ Future<void> main() async {
       getIt<CoinApi>(),
     ),
   );
-  String? flavor = await const MethodChannel('flavor')
-      .invokeMethod<String>('getFlavor');
-  print('=======FLAVOR $flavor');
+  // String? flavor = await const MethodChannel('flavor')
+  //     .invokeMethod<String>('getFlavor');
+  // print('=======FLAVOR $flavor');
   runApp(const MyApp());
 }
 
